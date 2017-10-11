@@ -1,0 +1,37 @@
+<style>
+.layout-title{
+    font-size: 2.4em;
+    font-weight: bold;
+    margin-top: 90px;
+}
+.todo-style{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.9em;
+}
+.scrollable-list{
+    overflow: hidden;
+    height: 33em;
+    overflow-y: scroll;
+}
+.strike{
+    text-decoration:line-through;
+}
+</style>
+<div class="row">
+    <div class="col-sm-offset-6 col-sm-4 layout-title">
+        Title
+    </div>
+</div>
+<div class="row scrollable-list">
+    <div class="col-sm-offset-4 col-sm-4 todo-style" ng-repeat="todo in user">
+        <input type="checkbox" name="checkbox{{$index}}" id="toDo{{$index}}"/>   
+        <span ng-class="todo.completed ? 'strike': '' ">{{todo.title}}</span>       
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
+        <input type="text" ng-model="addToDo"/>
+        <button ng-click="addToDo()">Add to do </button>
+    </div>
+</div>
