@@ -24,14 +24,16 @@
     </div>
 </div>
 <div class="row scrollable-list">
-    <div class="col-sm-offset-4 col-sm-4 todo-style" ng-repeat="todo in user">
-        <input type="checkbox" name="checkbox{{$index}}" id="toDo{{$index}}"/>   
-        <span ng-class="todo.completed ? 'strike': '' ">{{todo.title}}</span>       
+    <div class="col-sm-offset-4 col-sm-4 todo-style" ng-repeat="todo in todos">
+       <input type="checkbox" name="checkbox{{$index}}" data-ng-model="todo.completed" id="toDo{{$index}}" ng-click="updateTodo($index, todo.id)" />   
+        <span ng-class="todo.completed ? 'strike': '' ">{{todo.title}}</span>&nbsp;<span style="font-size: 17px;cursor: pointer;" class="glyphicon glyphicon-remove" ng-click="deleteTodo($index, todo.id)"></span>       
     </div>
 </div>
 <div class="row">
     <div class="col-sm-offset-4 col-sm-4">
-        <input type="text" ng-model="addToDo"/>
-        <button ng-click="addToDo()">Add to do </button>
+        <input type="text" class="form-control" ng-model="addToDo"/>        
+    </div> 
+    <div class="col-sm-4">
+        <button ng-click="saveTodo()" class="btn btn-success">Add to do </button>
     </div>
 </div>
