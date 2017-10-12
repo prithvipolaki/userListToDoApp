@@ -1,0 +1,18 @@
+.layout-title{
+    font-size: 2.4em;
+    font-weight: bold;
+    margin-top: 40px;
+}
+.todo-style{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.9em;
+}
+.scrollable-list{
+    overflow: hidden;
+    height: 33em;
+    overflow-y: scroll;
+}
+.strike{
+    text-decoration:line-through;
+}
